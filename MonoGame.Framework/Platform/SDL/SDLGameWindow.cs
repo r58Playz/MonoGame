@@ -34,7 +34,6 @@ namespace Microsoft.Xna.Framework
             get
             {
                 int x = 0, y = 0;
-                Sdl.Window.GetPosition(Handle, out x, out y);
                 return new Rectangle(x, y, _width, _height);
             }
         }
@@ -45,14 +44,10 @@ namespace Microsoft.Xna.Framework
             {
                 int x = 0, y = 0;
 
-                if (!IsFullScreen)
-                    Sdl.Window.GetPosition(Handle, out x, out y);
-
                 return new Point(x, y);
             }
             set
             {
-                Sdl.Window.SetPosition(Handle, value.X, value.Y);
                 _wasMoved = true;
             }
         }
